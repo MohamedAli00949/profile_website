@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            
+            .wrapper {
+                background: #a9e4f7;
+                background: linear-gradient(to right, #232526, #414345);
+                font-family: 'Montserrat', sans-serif;
+                color: #fff;
+                padding: 50px 0;
+            }
+            
+            .row {
+                margin: 0 auto;
+                width: 80%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 50px;
+            }
+            
+            .row:last-child {
+                margin-bottom: 0px;
+            }
+            
+            .row .container {
+                width: 48%;
+                min-width: 450px;
+                max-width: 650px;
+                box-shadow: 0 0 0px 4px rgba(18, 18, 18, 0.47);
+            }
+            
+            .container:hover {
+                box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.47);
+            }
+            
+            .row:nth-of-type(1) .container {
+                width: 31%;
+                min-width: 300px;
+                max-width: 450px;
+            }
+            
+            .row img {
+                cursor: pointer;
+                display: block;
+                width: 100%;
+            }
+            
+            .row .caption {
+                cursor: pointer;
+            }
+            
+            .row h2 {
+                display: inline;
+                background: rgba(51, 51, 51, 0.5);
+                padding: 15px;
+                letter-spacing: 2px;
+                font-weight: 100;
+                font-size: 22px;
+                cursor: pointer;
+            }
+            
+            .row p {
+                display: inline;
+                background: rgba(51, 51, 51, 0.7);
+                padding: 10px;
+                margin-top: 20px;
+                font-weight: 100;
+                font-size: 14px;
+                cursor: pointer;
+            }
+            
+            @media only screen and (min-width: 1900px) {
+                .row {
+                    width: 60%;
+                }
+            }
+            
+            @media only screen and (max-width: 1200px) {
+                .row {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    flex-direction: column;
+                }
+            
+                .row .container {
+                    width: 60%;
+                    min-width: 650px;
+                    margin: 40px 0;
+                }
+            
+                .row:nth-of-type(1) .container {
+                    width: 41%;
+                    min-width: 450px;
+                }
+            }
+            
+            @media only screen and (max-width: 850px) {
+                .row {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    flex-direction: column;
+                }
+            
+                .container {
+                    margin: 210px 0;
+                }
+            
+                .row .container {
+                    min-width: 450px;
+                }
+            
+                .row:nth-of-type(1) .container {
+                    min-width: 350px;
+                }
+            
+                .effect10 p {
+                    width: 80%;
+                }
+            
+                .effect13 .caption p {
+                    margin-top: 30px;
+                }
+            
+                .effect6 .caption h2 {
+                    font-size: 20px !important;
+                }
+            
+                .effect6 .caption p {
+                    font-size: 12px !important;
+                }
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 1 =====
+            */
+            .effect1 {
+                overflow: hidden;
+                clip-path: circle(50% at 50% 50%);
+                position: relative;
+            }
+            
+            .effect1 img {
+                position: relative;
+            }
+            
+            /*Line*/
+            .effect1 .caption:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 49%;
+                width: 3px;
+                height: 0;
+                background-color: #fff;
+                transition: top .5s, height .5s;
+            }
+            
+            .effect1:hover .caption:before, .effect1:active .caption:before {
+                top: 0;
+                height: 100%;
+            }
+            
+            /*Left & Right Side*/
+            .effect1 .leftSide,
+            .effect1 .rightSide {
+                position: absolute;
+                top: 0;
+                left: -125%;
+                width: 50%;
+                height: 100%;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 100%);
+                transition: left .7s;
+            }
+            
+            .effect1 .rightSide {
+                left: 125%;
+                background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .2) 100%);
+            }
+            
+            .effect1:hover .leftSide,
+            .effect1:active .leftSide {
+                left: 0;
+            }
+            
+            .effect1:hover .rightSide,
+            .effect1:active .rightSide {
+                left: 49%;
+            }
+            
+            /* Text */
+            .effect1 .leftInfo,
+            .effect1 .rightInfo {
+                opacity: 0;
+                font-size: 30px;
+                position: absolute;
+                top: 50%;
+                transition: opacity .6s, left .6s;
+            }
+            
+            .effect1 .leftInfo {
+                color: black;
+                transform: translate(-100%, -50%);
+                left: 0;
+            }
+            
+            .effect1 .rightInfo {
+                transform: translateY(-50%);
+                left: 100%;
+            }
+            
+            .effect1:hover .leftInfo,
+            .effect1:active .leftInfo
+            {
+                opacity: 1;
+                left: 47%;
+            }
+            
+            .effect1:hover .rightInfo,
+            .effect1:active .rightInfo {
+                opacity: 1;
+                left: 53%;
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 2 =====
+            */
+            .effect2 {
+                overflow: hidden;
+                clip-path: circle(50% at 50% 50%);
+                position: relative;
+            }
+            
+            .effect2 img {
+                filter: saturate(0);
+                transform: scale(1) rotate(20deg);
+                transition: transform 1s;
+            }
+            
+            .effect2:hover img {
+                filter: none;
+                /*transform: scale(1.3) rotate(0deg);*/
+            }
+            
+            /* Hover Element */
+            .effect2 .caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 70px;
+                background: rgba(29, 29, 29, 0.53);
+                transform: rotate(90deg);
+                transform-origin: 0 0;
+            
+                line-height: 70px;
+                text-align: center;
+                font-size: 1.4em;
+                font-style: italic;
+                transition: transform .7s;
+            }
+            
+            .effect2:hover .caption {
+                transform: rotate(0deg);
+            }
+            
+            
+            
+            
+            /* === Effect 3 === */
+            .effect3 {
+                overflow: hidden;
+                clip-path: circle(50% at 50% 50%);
+                position: relative;
+            }
+            
+            .effect3 img {
+                filter: saturate(0);
+                transition: transform .8s, filter .8s;
+            }
+            
+            .effect3:hover img {
+                filter: none;
+                transform: translateY(-70px);
+            }
+            
+            /* Hover Element */
+            .effect3 .caption {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 0px;
+                background: transparent;
+            
+                line-height: 70px;
+                text-align: center;
+                font-size: 1.4em;
+            
+                transition: height .8s;
+            }
+            
+            .effect3:hover .caption {
+                height: 70px;
+            }
+            
+            
+            
+            
+            
+            /* 
+                ===== Effect 4 =====
+            */
+            .effect4 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .effect4 img {
+                margin-left: 30px;
+                transform: scale(1.2);
+                transition: margin-left .7s;
+            }
+            
+            .effect4:hover img {
+                margin-left: 0;
+            }
+            
+            /* Text */
+            .effect4 .caption h2,
+            .effect4 .caption p {
+                position: absolute;
+                bottom: -20px;
+                transform: rotate(90deg);
+                transform-origin: 100% 100%;
+                transition: all .7s;
+            }
+            
+            .effect4 .caption h2 {
+                width: 400px;
+                right: -100px;
+            }
+            
+            .effect4 .caption p {
+                margin-top: 0;
+                width: 300px;
+                right: -60px;
+            }
+            
+            .effect4:hover .caption h2 {
+                bottom: 50%;
+                right: 0;
+                transform: rotate(0deg);
+                transform-origin: 100% 100%;
+            }
+            
+            .effect4:hover .caption p {
+                bottom: 32%;
+                right: 0;
+                transform: rotate(0deg);
+                transform-origin: 100% 100%;
+            
+                animation-name: effect4Move;
+                animation-duration: .8s;
+                animation-fill-mode: forwards;
+                animation-delay: .9s;
+            }
+            
+            @keyframes effect4Move {
+                0% {
+                    width: 300px;
+                }
+            
+                100% {
+                    width: 410px;
+                }
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 5 =====
+            */
+            .effect5 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .effect5 img {
+                transition: transform .4s;
+            }
+            
+            .effect5:hover img {
+                transform: scale(1.2);
+            }
+            
+            /*  Hover Element */
+            .effect5 .hoverElement {
+                background-color: rgba(0, 0, 0, 0.51);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+            
+                /*MASK*/
+                -webkit-mask-image: url(images/nature-sprite.png);
+                mask-image: url(images/nature-sprite.png);
+                -webkit-mask-size: 2300% 100%;
+                mask-size: 2300% 100%;
+                animation: effect5Animation2 0.6s steps(22) forwards;
+            }
+            
+            .effect5:hover .hoverElement {
+                animation: effect5Animation 0.6s steps(22) forwards;
+            }
+            
+            @keyframes effect5Animation {
+                0% {
+                    -webkit-mask-position: 0 0;
+                    mask-position: 0 0;
+                }
+            
+                100% {
+                    -webkit-mask-position: 100% 0;
+                    mask-position: 100% 0;
+                }
+            }
+            
+            @keyframes effect5Animation2 {
+                0% {
+                    -webkit-mask-position: 100% 0;
+                    mask-position: 100% 0;
+                }
+            
+                100% {
+                    -webkit-mask-position: 0 0;
+                    mask-position: 0 0;
+                }
+            }
+            
+            /* Text */
+            .effect5 h2 {
+                width: 370px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                opacity: 0;
+                background-color: transparent;
+                transition: transform .8s, opacity .8s;
+            }
+            
+            .effect5:hover h2 {
+                opacity: 1;
+            }
+            
+            
+            
+            
+            
+            /* === Effect 6 === */
+            .effect6 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            /* Images */
+            .effect6 img {}
+            
+            .effect6:hover .firstImg {
+                animation-name: scaleImg;
+                animation-duration: .7s;
+                animation-fill-mode: backwards;
+            }
+            
+            @keyframes scaleImg {
+                0% {
+                    transform: scale(1);
+                }
+            
+                30% {
+                    transform: scale(1.2);
+                }
+            
+                100% {
+                    transform: scale(1);
+                }
+            }
+            
+            .effect6 .secondImg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transition: opacity .7s;
+            }
+            
+            .effect6:hover .secondImg {
+                opacity: 1;
+                animation-name: scaleImg;
+                animation-duration: .7s;
+                animation-fill-mode: backwards;
+            }
+            
+            /* Text */
+            .effect6 .caption h2 {
+                font-size: 27px;
+                position: absolute;
+                right: 0;
+                top: -180px;
+                transition: top 1.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            
+            .effect6 .caption p {
+                text-align: right;
+                font-size: 15px;
+                position: absolute;
+                bottom: -180px;
+                right: 0;
+                transition: bottom 1.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            
+            .effect6:hover .caption h2 {
+                top: 25%;
+            }
+            
+            .effect6:hover .caption p {
+                bottom: 30%;
+            }
+            
+            
+            
+            
+            
+            /* 
+                ===== Effect 7 =====
+            */
+            .effect7 {
+                position: relative;
+                overflow: hidden;
+                perspective: 40em;
+            }
+            
+            /* Hover Element */
+            .effect7 .caption {
+                content: "";
+                display: block;
+                background-color: #262626;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+            
+                outline: 1px solid rgba(255, 255, 255, 0.72);
+                outline-offset: -15px;
+            
+                transform: rotateX(-90deg);
+                transform-origin: 50% 50%;
+                opacity: 0;
+                transition: transform 0.8s ease-in-out, opacity .8s;
+            }
+            
+            .effect7:hover .caption {
+                transform: rotateX(0);
+                opacity: 0.7;
+            }
+            
+            /* Text */
+            .effect7 .caption h2,
+            .effect7 .caption p {
+                position: absolute;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: transparent;
+                text-align: center;
+                opacity: 0;
+                z-index: 9;
+                transition: all .4s .2s, opacity .4s .2s;
+            }
+            
+            .effect7 .caption h2 {
+                top: 10%;
+                width: 400px;
+            }
+            
+            .effect7 .caption p {
+                top: 90%;
+                width: 300px;
+            }
+            
+            .effect7:hover .caption h2 {
+                top: 28%;
+                opacity: 1;
+            }
+            
+            .effect7:hover .caption p {
+                top: 58%;
+                opacity: 1;
+            }
+            
+            
+            
+            
+            
+            /* 
+                ===== Effect 8 =====
+            */
+            .effect8 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .effect8 img {
+                transition: all 1s;
+            }
+            
+            .effect8:hover img {
+                transform: scale(1.3);
+            }
+            
+            /* Button */
+            .effect8 .btn {
+                border: none;
+                outline: none;
+                padding: 10px 35px;
+                background-color: rgba(255, 156, 21, 0.8);
+                cursor: pointer;
+                color: black;
+                font-size: 18px;
+                white-space: nowrap;
+                margin-top: 20px;
+                margin-right: 40px;
+                transition: all .5s;
+            }
+            
+            .effect8 .btn:hover {
+                background: rgba(255, 156, 21, 1);
+            }
+            
+            /* Text */
+            .effect8 h2 {
+                position: absolute;
+                right: 0px;
+                top: 20%;
+                text-align: right;
+                transform: translateX(700px) scale(0.1);
+                transition: transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            
+            .effect8 .btn {
+                position: absolute;
+                top: 65%;
+                left: 50%;
+                transform: translateX(800px);
+                transition: transform 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            }
+            
+            .effect8:hover h2 {
+                transform: translateX(0px) scale(1);
+            }
+            
+            .effect8:hover .btn {
+                left: 50%;
+                transform: translateX(-50%);
+                animation: btnWidth 1.2s forwards;
+            }
+            
+            @keyframes btnWidth {
+                0% {
+                    padding: 10px 35px;
+                    opacity: .2;
+                }
+            
+                50% {
+                    padding: 10px 100%;
+                }
+            
+                100% {
+                    padding: 10px 35px;
+                    opacity: 1;
+                }
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 9 =====
+            */
+            .effect9 {
+                position: relative;
+            }
+            
+            .effect9 img {
+                transition: filter .6s;
+            }
+            
+            .effect9:hover img {
+                filter: grayscale(8);
+            }
+            
+            /* Hover Element */
+            .effect9 .caption {
+                background-color: rgba(0, 0, 0, 0.31);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            
+                width: 0;
+                overflow: hidden;
+                transition: width .9s;
+            }
+            
+            .effect9:hover .caption {
+                width: 100%;
+            }
+            
+            /* Text */
+            .effect9 .caption h2,
+            .effect9 .caption p {
+                opacity: 0;
+                position: absolute;
+                white-space: nowrap;
+                overflow: hidden;
+                transition: transform .9s, opacity .9s;
+            }
+            
+            .effect9 .caption h2 {
+                background: rgb(131, 58, 180);
+                background: linear-gradient(90deg, rgba(131, 58, 180, .4) 0%, rgba(253, 29, 29, .4) 50%, rgba(252, 176, 69, .4) 100%);
+                top: 33%;
+                transform: translateX(700px);
+            }
+            
+            .effect9 .caption p {
+                background: rgba(255, 255, 255, 0.41);
+                color: black;
+                top: 51%;
+                left: 20px;
+                transform: translateX(-700px);
+            }
+            
+            .effect9:hover .caption h2,
+            .effect9:hover .caption p {
+                transform: translateX(0px);
+                opacity: 1;
+            }
+            
+            
+            
+            
+            
+            /* 
+                ===== Effect 10 =====
+            */
+            .effect10 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            /* Shine effect */
+            .effect10 .caption:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -80%;
+                display: block;
+                width: 50%;
+                height: 100%;
+                z-index: 9;
+                background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 100%);
+                transform: skewX(-25deg);
+                transition: left .6s;
+            }
+            
+            .effect10:hover .caption:before {
+                left: 125%;
+            }
+            
+            /* Text */
+            .effect10 h2,
+            .effect10 p {
+                position: absolute;
+                left: 0;
+                transform: translateX(-700px) scale(0.1) skewX(95deg);
+            }
+            
+            .effect10 h2 {
+                font-size: 18px;
+                width: 320px;
+                top: 20%;
+                border-right: 12px solid #085d0b;
+                transition: transform .6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            
+            .effect10 p {
+                top: 45%;
+                border-right: 12px solid #1a8d1e;
+                transition: transform 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            }
+            
+            .effect10:hover h2,
+            .effect10:hover p {
+                transform: translateX(0px) scale(1) skewX(0deg);
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 11 =====
+            */
+            .effect11 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            /* Fake elements (_mask) - Their role is to detect hover on image (left & right side) */
+            .effect11 .leftSide_mask,
+            .effect11 .rightSide_mask {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                z-index: 9;
+            }
+            
+            .effect11 .leftSide_mask {
+                left: 0;
+                right: 50%;
+            }
+            
+            .effect11 .rightSide_mask {
+                left: 50%;
+                right: 0;
+            }
+            
+            .effect11 .leftSide_mask:hover ~ .rightSide {
+                transform: rotateY(0deg);
+            }
+            
+            .effect11 .rightSide_mask:hover ~ .leftSide {
+                transform: rotateY(0deg);
+            }
+            
+            /* Hover Elements */
+            .effect11 .leftSide,
+            .effect11 .rightSide {
+                background-color: rgba(0, 0, 0, 0.38);
+                position: absolute;
+                top: 0;
+                bottom: -1px;
+                transform: rotateY(90deg);
+                transition: transform .4s;
+            }
+            
+            .effect11 .leftSide {
+                left: 0;
+                right: 50%;
+                transform-origin: top left;
+            }
+            
+            .effect11 .rightSide {
+                left: 50%;
+                right: -1px;
+                transform-origin: top right;
+            }
+            
+            /* Text*/
+            .effect11 .leftSide h2,
+            .effect11 .rightSide h2 {
+                background-color: transparent;
+            }
+            
+            .effect11 h2 {
+                font-size: 17px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 12 =====
+            */
+            .effect12 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .effect12 .firstImg {
+                transition: transform .8s;
+            }
+            
+            .effect12:hover .firstImg {
+                transform: scale(1.2)
+            }
+            
+            .effect12 .secondImg,
+            .effect12 .thirdImg {
+                position: absolute;
+                top: 0;
+                z-index: 3;
+                filter: saturate(0);
+                transition: transform 1.6s;
+            }
+            
+            .effect12 .secondImg {
+                left: 0;
+                clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+            }
+            
+            .effect12 .thirdImg {
+                right: 0;
+                clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+            }
+            
+            .effect12:hover .secondImg {
+                transform: translateX(-700px) skewX(40deg);
+            }
+            
+            .effect12:hover .thirdImg {
+                transform: translateX(700px) skewX(-40deg);
+            }
+            
+            
+            
+            
+            /* 
+                ===== Effect 13 =====
+            */
+            .effect13 {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .effect13 img {
+                transition: filter .8s;
+            }
+            
+            .effect13:hover img {
+                filter: grayscale(.8) blur(1px);
+            }
+            
+            /* Text */
+            .effect13 .caption h2 {
+                position: absolute;
+                top: 25%;
+                left: 0;
+                transform: translateX(-600px);
+                transition: transform .6s;
+            }
+            
+            .effect13 .caption p {
+                position: absolute;
+                top: 40%;
+                right: -50px;
+                width: 460px;
+            
+                transform: rotate(-90deg);
+                transform-origin: 100% 100%;
+                transition: transform .6s;
+            }
+            
+            .effect13:hover .caption h2,
+            .effect13:hover .caption p {
+                transform: rotate(0deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div  class="wrapper">
+            <div class="row">
+                <div class="effect1 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761652-81f85c00-8ffc-11eb-96df-60dcb4146d41.jpg" alt="">
+                    <div class="caption">
+                        <div class="leftSide"></div>
+                        <div class="rightSide"></div>
+                        <span class="rightInfo">WORLD</span>
+                        <span class="leftInfo">HELLO</span>
+                    </div>
+                </div>
+        
+                <div class="effect2 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761655-8290f280-8ffc-11eb-912c-a97d2cf08f9b.jpg" alt="">
+                    <div class="caption">Hola</div>
+                </div>
+        
+                <div class="effect3 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761653-81f85c00-8ffc-11eb-9c86-9fde6613273d.jpg" alt="">
+                    <div class="caption">Ciao</div>
+                </div>
+            </div>
+        
+        
+            <div class="row">
+                <div class="effect4 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761662-845ab600-8ffc-11eb-955f-2cb6192180d6.jpg" alt="">
+                    <div class="caption">
+                        <h2>It's time to put on makeup</h2>
+                        <p> I guess you have to do it yourself.</p>
+                    </div>
+                </div>
+        
+                <!--inspired by codrops article: https://tympanus.net/codrops/2016/09/29/transition-effect-with-css-masks/-->
+                <div class="effect5 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761660-83c21f80-8ffc-11eb-8cd3-b8b460d7bf03.jpg" alt="">
+                    <div class="hoverElement"></div>
+                    <h2>What planet is this, anyway?</h2>
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="effect6 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761645-80c72f00-8ffc-11eb-978d-fc4e0163028f.jpg" class="firstImg" alt="">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761646-80c72f00-8ffc-11eb-8e6e-96aaea74ce09.jpg" class="secondImg" alt="">
+                    <div class="caption">
+                        <h2>It's time to dress up right.</h2>
+                        <p>Well we're movin' to a deluxe apartment in the sky.</p>
+                    </div>
+                </div>
+        
+                <div class="effect7 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761664-84f34c80-8ffc-11eb-8517-e7dd47c3fad2.jpg" alt="">
+                    <div class="caption">
+                        <h2>Can you tell me how to get how to get to Sesame Street?</h2>
+                        <p>One two three four five six seven eight Sclemeel schlemazel hasenfeffer incorporated.</p>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <div class="row">
+                <div class="effect8 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761657-8290f280-8ffc-11eb-9eca-0f4bbb77f107.jpg" alt="">
+                    <div class="caption">
+                        <h2>Do you see any Teletubbies?</h2>
+                        <button type="button" class="btn">I did</button>
+                    </div>
+                </div>
+        
+                <div class="effect9 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761659-83c21f80-8ffc-11eb-82cc-dcea193c4511.jpg" alt="">
+                    <div class="caption">
+                        <h2>Believe it or not I'm walking on air.</h2>
+                        <p>I never thought I could feel so free. </p>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <div class="row">
+                <div class="effect10 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761648-815fc580-8ffc-11eb-8ebf-496748ed2db9.jpg" alt="">
+                    <div class="caption">
+                        <h2>How much did you make me?</h2>
+                        <p> I guess if you want children beaten, you have to do it yourself.</p>
+                    </div>
+                </div>
+        
+                <div class="effect11 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761663-845ab600-8ffc-11eb-81c6-9c7c80f1c03f.jpg" alt="">
+                    <div class="leftSide_mask"></div>
+                    <div class="rightSide_mask"></div>
+                    <div class="leftSide">
+                        <h2>Left</h2>
+                    </div>
+                    <div class="rightSide">
+                        <h2>Right</h2>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <div class="row">
+                <div class="effect12 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761666-84f34c80-8ffc-11eb-9405-7621f584bbe5.jpg" class="firstImg" alt="">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761666-84f34c80-8ffc-11eb-9405-7621f584bbe5.jpg" class="secondImg" alt="">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761666-84f34c80-8ffc-11eb-9405-7621f584bbe5.jpg" class="thirdImg" alt="">
+                </div>
+        
+                <div class="effect13 container">
+                    <img src="https://user-images.githubusercontent.com/26748614/112761657-8290f280-8ffc-11eb-9eca-0f4bbb77f107.jpg" alt="">
+                    <div class="caption">
+                        <h2>Goodbye, friends</h2>
+                        <p>I never thought I'd die like this. But I always really hoped.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
